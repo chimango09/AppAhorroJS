@@ -8,8 +8,18 @@ main {
     height: 600px;
     background-color: aliceblue;
     margin: 40px auto;
+    border-radius: 30px;
 }
-
+h1{
+    text-align: center;
+}
+.contenedor{
+    padding:20px;
+}
 .alertas {
     color: red;
+}
+
+.ingresos {
+    padding: 10px;
 }

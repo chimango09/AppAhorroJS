@@ -10,26 +10,28 @@
 <body>
     <main>
         <h1>App Ahorro Personal</h1>
-        <section>
-            <h2>Ingreso mensual</h2>
-            <input type="number" id="ingreso-mensual" placeholder="Ingrese su monto">
-            <button id="guardarIngreso">Guardar Ingreso</button>
-            <p id="alertaIngreso"></p>
-        </section>
-        <section>
-            <h2>Gastos</h2>
-            <input type="text" id="nombre-gasto" placeholder="Ingrese nombre del gasto">
-            <input type="number" id="monto-gasto" placeholder="Ingrese el monto">
-            <button id="agregarGasto">Agregar gasto</button>
-            <p id="alertaGasto"></p>
-            <ul id="listaGastos"></ul>
-        </section>
-        <section id="resumen">
-            <h2>Resumen</h2>
-            <p>Ingreso total: <span id="mostrarIngreso"></span></p>
-            <p>Gasto total: <span id="mostrarGasto"></span></p>
-            <p>Restante: <span id="mostrarRestante"></span></p>
-        </section>
+        <div class="contenedor">
+            <section>
+                <h2>Ingreso mensual</h2>
+                <input type="number" id="ingreso-mensual" placeholder="Ingrese su monto">
+                <button id="guardarIngreso">Guardar Ingreso</button>
+                <p id="alertaIngreso" class="alertas"></p>
+            </section>
+            <section>
+                <h2>Gastos</h2>
+                <input type="text" id="nombre-gasto" placeholder="Ingrese nombre del gasto">
+                <input type="number" id="monto-gasto" placeholder="Ingrese el monto">
+                <button id="agregarGasto">Agregar gasto</button>
+                <p id="alertaGasto" class="alertas"></p>
+                <ul id="listaGastos"></ul>
+            </section>
+            <section id="resumen">
+                <h2>Resumen</h2>
+                <p>Ingreso total: <span id="mostrarIngreso"></span></p>
+                <p>Gasto total: <span id="mostrarGasto"></span></p>
+                <p>Restante: <span id="mostrarRestante"></span></p>
+            </section>
+        </div>
     </main>
 </body>
 </html>

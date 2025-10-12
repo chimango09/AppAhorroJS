@@ -51,8 +51,11 @@ btn_agregarGasto.addEventListener("click",agregarGasto)
 cargarGastos()
 
 function cargarGastos (){
+    
     ul_listaGastos.innerHTML = ""
+
     gastos.forEach((gasto, indice) => {
+
         const liLista = document.createElement("li")
         liLista.textContent = `${gasto.nombre}: $${gasto.monto}`
         ul_listaGastos.appendChild(liLista)
@@ -62,6 +65,10 @@ function cargarGastos (){
         liLista.appendChild(btn_eliminarGasto)
         btn_eliminarGasto.addEventListener("click",() => eliminarGasto(indice))
 
+        const btn_editarGasto = document.createElement("button")
+        btn_editarGasto.textContent = "Editar"
+        liLista.appendChild(btn_editarGasto)
+        btn_editarGasto.addEventListener("click",() => editarGasto(indice))
     })
 
     const totalGastos = gastos.reduce((gastoAcumulado,gasto) => gastoAcumulado + gasto.monto,0)
@@ -89,11 +96,25 @@ function agregarGasto(){
         localStorage.setItem("gastos",JSON.stringify(gastos))
         cargarGastos()
         p_alertaGasto.textContent = ""
+        in_montoGasto.value = ""
+        in_nombreGasto.value = ""
     }
 }
 //---------------Eliminar Gasto------------------------
 
 function eliminarGasto(indice){
+    gastos.splice(indice,1)
+    localStorage.setItem("gastos",JSON.stringify(gastos))
+    cargarGastos()
+}
+
+//--------------Editar Gasto------------------
+
+function editarGasto (indice){
+    const gasto = gastos[indice]
+    in_nombreGasto.value = gasto.nombre
+    in_montoGasto.value = gasto.monto
+
     gastos.splice(indice,1)
     localStorage.setItem("gastos",JSON.stringify(gastos))
     cargarGastos()
