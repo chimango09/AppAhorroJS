@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="./js/main.js" defer></script>
+    <link rel="stylesheet" href="./styles/styles.css">
     <title>App Ahorro Personal</title>
 </head>
 <body>
@@ -13,13 +14,14 @@
             <h2>Ingreso mensual</h2>
             <input type="number" id="ingreso-mensual" placeholder="Ingrese su monto">
             <button id="guardarIngreso">Guardar Ingreso</button>
+            <p id="alertaIngreso"></p>
         </section>
         <section>
             <h2>Gastos</h2>
             <input type="text" id="nombre-gasto" placeholder="Ingrese nombre del gasto">
             <input type="number" id="monto-gasto" placeholder="Ingrese el monto">
             <button id="agregarGasto">Agregar gasto</button>
-
+            <p id="alertaGasto"></p>
             <ul id="listaGastos"></ul>
         </section>
         <section id="resumen">

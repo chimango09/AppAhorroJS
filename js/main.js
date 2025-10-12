@@ -5,6 +5,7 @@ let ingreso = 0
 const in_ingresoMensual = document.getElementById("ingreso-mensual")
 const btn_guardarIngreso = document.getElementById("guardarIngreso")
 const spn_mostrarIngreso = document.getElementById("mostrarIngreso")
+const p_alertaIngreso = document.getElementById("alertaIngreso")
 
 btn_guardarIngreso.addEventListener("click",guardarIngreso)
 
@@ -23,12 +24,13 @@ function guardarIngreso(){
     let valor = parseFloat(in_ingresoMensual.value)
 
     if (valor <= 0 || isNaN(valor)){
-        alert("Por favor ingrese un monto valido.")
+        p_alertaIngreso.textContent = "El monto ingresado es incorrecto, revise los campos"
     } else{
         ingreso = valor
 
         localStorage.setItem("ingreso",ingreso)
         cargarIngresos()
+        p_alertaIngreso.textContent = ""
     }
 
 }
@@ -39,6 +41,7 @@ const in_montoGasto = document.getElementById("monto-gasto")
 const btn_agregarGasto = document.getElementById("agregarGasto")
 const spn_mostarGastos = document.getElementById("mostrarGasto")
 const ul_listaGastos = document.getElementById("listaGastos")
+const p_alertaGasto = document.getElementById("alertaGasto")
 
 
 const gastos = JSON.parse(localStorage.getItem("gastos")) || []
@@ -76,7 +79,7 @@ function agregarGasto(){
     const montoGasto = parseFloat(in_montoGasto.value)
 
     if (nombreGasto === "" || montoGasto <= 0 || isNaN(montoGasto)){
-        alert("Nombre o monto invalido, por favor revise los campos e ingrese nuevamente")
+        p_alertaGasto.textContent = "El gasto ingresado es incorrecto, revise los campos"
     }  else {
         gastos.push({
             nombre: nombreGasto,
@@ -85,6 +88,7 @@ function agregarGasto(){
 
         localStorage.setItem("gastos",JSON.stringify(gastos))
         cargarGastos()
+        p_alertaGasto.textContent = ""
     }
 }
 //---------------Eliminar Gasto------------------------
