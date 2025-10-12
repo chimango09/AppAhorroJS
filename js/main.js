@@ -49,10 +49,16 @@ cargarGastos()
 
 function cargarGastos (){
     ul_listaGastos.innerHTML = ""
-    gastos.forEach((gasto) => {
+    gastos.forEach((gasto, indice) => {
         const liLista = document.createElement("li")
         liLista.textContent = `${gasto.nombre}: $${gasto.monto}`
         ul_listaGastos.appendChild(liLista)
+
+        const btn_eliminarGasto = document.createElement("button")
+        btn_eliminarGasto.textContent = "Eliminar"
+        liLista.appendChild(btn_eliminarGasto)
+        btn_eliminarGasto.addEventListener("click",() => eliminarGasto(indice))
+
     })
 
     const totalGastos = gastos.reduce((gastoAcumulado,gasto) => gastoAcumulado + gasto.monto,0)
@@ -62,6 +68,7 @@ function cargarGastos (){
     let ahorro = ingreso - totalGastos
     localStorage.setItem("ahorro",ahorro)
     spn_mostrarRestante.textContent = `$${ahorro}`
+
 }
 
 function agregarGasto(){
@@ -80,4 +87,10 @@ function agregarGasto(){
         cargarGastos()
     }
 }
-//---------------------Restante-----------------------------
+//---------------Eliminar Gasto------------------------
+
+function eliminarGasto(indice){
+    gastos.splice(indice,1)
+    localStorage.setItem("gastos",JSON.stringify(gastos))
+    cargarGastos()
+}
