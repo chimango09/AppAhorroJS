@@ -14,9 +14,18 @@
             <input type="number" id="ingreso-mensual" placeholder="Ingrese su monto">
             <button id="guardarIngreso">Guardar Ingreso</button>
         </section>
+        <section>
+            <h2>Gastos</h2>
+            <input type="text" id="nombre-gasto" placeholder="Ingrese nombre del gasto">
+            <input type="number" id="monto-gasto" placeholder="Ingrese el monto">
+            <button id="agregarGasto">Agregar gasto</button>
+
+            <ul id="listaGastos"></ul>
+        </section>
         <section id="resumen">
             <h2>Resumen</h2>
             <p>Ingreso total: <span id="mostrarIngreso"></span></p>
+            <p>Gasto total: <span id="mostrarGasto"></span></p>
         </section>
     </main>
 </body>
