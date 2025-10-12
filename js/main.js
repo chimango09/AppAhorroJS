@@ -55,8 +55,13 @@ function cargarGastos (){
         ul_listaGastos.appendChild(liLista)
     })
 
-    const totalGastos = gastos.reduce((gastoAcumulado,gasto) => gastoAcumulado = gastoAcumulado + gasto.monto,0)
+    const totalGastos = gastos.reduce((gastoAcumulado,gasto) => gastoAcumulado + gasto.monto,0)
     spn_mostarGastos.textContent= `$${totalGastos}`
+
+    let spn_mostrarRestante = document.getElementById("mostrarRestante")
+    let ahorro = ingreso - totalGastos
+    localStorage.setItem("ahorro",ahorro)
+    spn_mostrarRestante.textContent = `$${ahorro}`
 }
 
 function agregarGasto(){
@@ -75,3 +80,4 @@ function agregarGasto(){
         cargarGastos()
     }
 }
+//---------------------Restante-----------------------------
