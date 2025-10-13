@@ -17,6 +17,7 @@ function cargarIngresos(){
         ingreso = parseFloat(ingresoGuardado)
         spn_mostrarIngreso.textContent = `$${ingreso}`
     }
+    in_ingresoMensual.value = ""
 }
 
 function guardarIngreso(){
