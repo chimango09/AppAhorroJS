@@ -1,17 +1,30 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap'");
+*{
+    margin: 0;
+    padding: 0;
+}
 body{
     font-family: "inter", sans-serif;
-    background-color: beige;
+    background-color: rgb(147, 212, 255);
 }
 main {
-    width: 500px;
+    width: 800px;
     height: 600px;
-    background-color: aliceblue;
+    background-color: rgb(101, 183, 255);
     margin: 40px auto;
     border-radius: 30px;
+    box-shadow: 3px 3px 3px 3px rgb(74, 107, 128);
+}
+section{
+    margin: 5px;
+    padding: 10px;
 }
 h1{
     text-align: center;
+}
+
+h2{
+    margin: 5px;
 }
 .contenedor{
     padding:20px;
@@ -22,4 +35,32 @@ h1{
 
 .ingresos {
     padding: 10px;
+}
+input{
+    padding: 10px;
+    border-radius: 5px;
+}
+
+button{
+    background-color: rgb(168, 208, 255);
+    color:black;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+
+}
+button:hover{
+    background-color: rgb(55, 147, 252);
+}
+
+ul{
+    list-style: none;
+}
+
+li{
+    padding: 10px;
+}
+
+li button{
+    margin: 5px;
 }
