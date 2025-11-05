@@ -81,10 +81,29 @@ function mostrarIngresos(){
 }
 
 function eliminarIngreso(indice){
-    ingresos.splice(indice,1)
-    localStorage.setItem("ingresos", JSON.stringify(ingresos))
-    mostrarIngresos()
-    actualizarRestante()
+    const ingreso = ingresos [indice]
+
+    Swal.fire({
+        title: "¿Esta seguro de eliminar el ingreso?",
+        text: "Si elimina esto no podra revertirlo!",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Si, quiero eliminarlo!"
+    }).then((result) => {
+    if (result.isConfirmed) {
+        ingresos.splice(indice,1)
+        localStorage.setItem("ingresos", JSON.stringify(ingresos))
+        mostrarIngresos()
+        actualizarRestante()
+        Swal.fire({
+        title: "Eliminado!",
+        text: "El ingreso fue eliminado",
+        icon: "success"
+        });
+    }
+    });
 }
 
 function actualizarRestante(){
