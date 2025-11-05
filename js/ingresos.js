@@ -9,7 +9,7 @@ const ul_listaIngresos = document.getElementById("listaIngresos")
 const dt_ingresoFecha = document.getElementById("fecha-ingreso")
 const spn_monstarRestante = document.getElementById("mostrarRestante")
 
-btn_guardarIngreso.addEventListener("click", async () =>{   // <-- async
+btn_guardarIngreso.addEventListener("click", async () =>{
     try{
         let valor = parseFloat(in_ingresoMensual.value)
         let fecha = dt_ingresoFecha.value

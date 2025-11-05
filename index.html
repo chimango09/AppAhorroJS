@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="./js/ingresos.js" defer></script>
+    <script src="./js/gastos.js" defer></script>
     <link rel="stylesheet" href="./styles/styles.css">
     <title>App Ahorro Personal</title>
 </head>
@@ -23,6 +24,8 @@
                 <h2>Gastos</h2>
                 <input type="text" id="nombre-gasto" placeholder="Ingrese nombre del gasto">
                 <input type="number" id="monto-gasto" placeholder="Ingrese el monto">
+                <select name="Categoria" id="categoria-gasto"></select>
+                <input type="date" id="fecha-gasto">
                 <button id="agregarGasto">Agregar gasto</button>
                 <ul id="listaGastos"></ul>
             </section>
