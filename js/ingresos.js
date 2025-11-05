@@ -72,8 +72,12 @@ function mostrarIngresos(){
         const btn_eliminarIngreso = document.createElement("button")
         btn_eliminarIngreso.textContent = "Eliminar ingreso"
         btn_eliminarIngreso.addEventListener("click", () => eliminarIngreso(indice))
-
+        
+        const btn_editarIngreso = document.createElement("button")
+        btn_editarIngreso.textContent ="Editar ingreso"
+        btn_editarIngreso.addEventListener("click", () => editarIngreso(indice))
         li.appendChild(btn_eliminarIngreso)
+        li.appendChild(btn_editarIngreso)
         ul_listaIngresos.appendChild(li)
     });
 
@@ -101,6 +105,35 @@ function eliminarIngreso(indice){
         title: "Eliminado!",
         text: "El ingreso fue eliminado",
         icon: "success"
+        });
+    }
+    });
+}
+
+function editarIngreso(indice){
+    const ingreso = ingresos[indice]
+    Swal.fire({
+        title: "¿Esta seguro que quiere editar el ingreso?",
+        icon: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Editar"
+    }).then((result) => {
+    if (result.isConfirmed) {
+
+        in_ingresoMensual.value = ingreso.monto
+        dt_ingresoFecha.value = ingreso.fecha
+
+        ingresos.splice(indice,1)
+        localStorage.setItem("ingresos", JSON.stringify(ingresos))
+
+        mostrarIngresos()
+        actualizarRestante()
+        Swal.fire({
+        title: "Editando",
+        text: "El ingreso fue cargado en los campos para ser editado",
+        icon: "info"
         });
     }
     });
