@@ -127,6 +127,7 @@ function eliminarGasto(indice){
             text: "Si elimina esto no podra revertirlo!",
             icon: "warning",
             showCancelButton: true,
+            cancelButtonText: "Cancelar",
             confirmButtonColor: "#3085d6",
             cancelButtonColor: "#d33",
             confirmButtonText: "Si, quiero eliminarlo!"
@@ -156,6 +157,7 @@ function editarGasto (indice){
         showCancelButton: true,
         confirmButtonColor: "#3085d6",
         cancelButtonColor: "#d33",
+        cancelButtonText: "Cancelar",
         confirmButtonText: "Editar"
     }).then((result) => {
     if (result.isConfirmed) {

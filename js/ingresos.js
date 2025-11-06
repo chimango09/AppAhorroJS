@@ -94,6 +94,7 @@ function eliminarIngreso(indice){
         showCancelButton: true,
         confirmButtonColor: "#3085d6",
         cancelButtonColor: "#d33",
+        cancelButtonText: "Cancelar",
         confirmButtonText: "Si, quiero eliminarlo!"
     }).then((result) => {
     if (result.isConfirmed) {
@@ -118,6 +119,7 @@ function editarIngreso(indice){
         showCancelButton: true,
         confirmButtonColor: "#3085d6",
         cancelButtonColor: "#d33",
+        cancelButtonText: "Cancelar",
         confirmButtonText: "Editar"
     }).then((result) => {
     if (result.isConfirmed) {
