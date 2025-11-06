@@ -11,7 +11,7 @@ const gastos = JSON.parse(localStorage.getItem("gastos")) || []
 
 
 async function cargarCategorias() {
-    const respuesta = await fetch("../db/categorias.json")
+    const respuesta = await fetch("./db/categorias.json")
     const data = await respuesta.json()
 
     const categorias = data.categorias
@@ -68,7 +68,7 @@ btn_agregarGasto.addEventListener("click", async () => {
         await Swal.fire({
             icon: "error",
             title: "Error",
-            text: "El ingreso no pudo ser agregado",
+            text: "El gasto no pudo ser agregado",
         });
     } finally {
         Swal.fire({
@@ -172,7 +172,7 @@ function editarGasto (indice){
         actualizarRestante()
         Swal.fire({
         title: "Editando",
-        text: "El ingreso fue cargado en los campos para ser editado",
+        text: "El gasto fue cargado en los campos para ser editado",
         icon: "info"
         });
     }
