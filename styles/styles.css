@@ -5,62 +5,114 @@
 }
 body{
     font-family: "inter", sans-serif;
-    background-color: rgb(147, 212, 255);
+    background-color: rgb(222, 222, 222);
 }
 main {
-    width: 800px;
+    width: 900px;
     height: 600px;
-    background-color: rgb(101, 183, 255);
+    background-color: rgb(255, 255, 255);
     margin: 40px auto;
-    border-radius: 30px;
-    box-shadow: 3px 3px 3px 3px rgb(74, 107, 128);
+    border-radius: 25px;
+    box-shadow: 3px 3px 3px 3px rgb(123, 123, 123);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
 }
-section{
-    margin: 5px;
-    padding: 10px;
+.card{
+    margin: 10px;
 }
 h1{
     text-align: center;
+    color: rgb(49, 171, 212);
+    margin-bottom: 15px;
+    font-weight: 700;
 }
 
 h2{
-    margin: 5px;
+    margin: 10px;
+    color: rgb(49, 171, 212);
 }
 .contenedor{
     padding:20px;
-}
-.alertas {
-    color: red;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
 }
 
 .ingresos {
     padding: 10px;
+    margin: 2px;
+
 }
 input{
-    padding: 10px;
-    border-radius: 5px;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #7e7e7e;
+    box-shadow: 0 0 5px;
 }
 
 button{
-    background-color: rgb(168, 208, 255);
-    color:black;
+    background-color: rgb(49, 171, 212);
+    color:white;
     border: none;
-    padding: 10px;
-    border-radius: 5px;
-
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.5s;
 }
+
 button:hover{
-    background-color: rgb(55, 147, 252);
+    background-color: rgb(10, 109, 143);
 }
 
 ul{
     list-style: none;
+    margin: 15px;
 }
 
 li{
     padding: 10px;
+    margin-bottom: 10px;
+    background-color:  #d1e8ff;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 2px ;
+    transition: all 0.2s;
 }
 
+li:hover{
+    background-color: #e3f2fd;
+}
 li button{
-    margin: 5px;
+    margin-left: 5px;
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 15px;
+}
+select{
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #7e7e7e;
+    box-shadow: 0 0 5px;
+}
+
+.resumen{
+    display: flex;
+    justify-content: space-around;
+    gap: 15px;
+    padding: 10px;
+}
+.cardResumen{
+    background-color: white;
+    padding: 15px;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px grey;
+    text-align: center;
+}
+.cardResumen h3{
+    color: rgb(49, 171, 212);
+    margin-bottom: 8px;
 }

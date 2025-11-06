@@ -70,11 +70,11 @@ function mostrarIngresos(){
         li.textContent= `${i.fecha}: $${i.monto}` 
 
         const btn_eliminarIngreso = document.createElement("button")
-        btn_eliminarIngreso.textContent = "Eliminar ingreso"
+        btn_eliminarIngreso.textContent = "Eliminar"
         btn_eliminarIngreso.addEventListener("click", () => eliminarIngreso(indice))
         
         const btn_editarIngreso = document.createElement("button")
-        btn_editarIngreso.textContent ="Editar ingreso"
+        btn_editarIngreso.textContent ="Editar"
         btn_editarIngreso.addEventListener("click", () => editarIngreso(indice))
         li.appendChild(btn_eliminarIngreso)
         li.appendChild(btn_editarIngreso)

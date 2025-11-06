@@ -13,14 +13,14 @@
     <main>
         <h1>App Ahorro Personal</h1>
         <div class="contenedor">
-            <section>
+            <section class="card">
                 <h2>Ingresos</h2>
                 <input type="number" id="ingreso-mensual" placeholder="Ingrese su monto">
                 <input type="date" id="fecha-ingreso" placeholder="Ingrese la fecha">
                 <button id="guardarIngreso">Guardar Ingreso</button>
                 <ul id="listaIngresos"></ul>
             </section>
-            <section>
+            <section class="card">
                 <h2>Gastos</h2>
                 <input type="text" id="nombre-gasto" placeholder="Ingrese nombre del gasto">
                 <input type="number" id="monto-gasto" placeholder="Ingrese el monto">
@@ -29,11 +29,20 @@
                 <button id="agregarGasto">Agregar gasto</button>
                 <ul id="listaGastos"></ul>
             </section>
-            <section id="resumen">
+            <section class="resumen" id="resumen">
                 <h2>Resumen</h2>
-                <p>Ingreso total: <span id="mostrarIngreso"></span></p>
-                <p>Gasto total: <span id="mostrarGasto"></span></p>
-                <p>Restante: <span id="mostrarRestante"></span></p>
+                <div class="cardResumen">
+                    <h3>Ingresos</h3>
+                    <p id="mostrarIngreso">$0</p>
+                </div>
+                <div class="cardResumen">
+                    <h3>Gastos</h3>
+                    <p id="mostrarGasto">$0</p>
+                </div>
+                <div class="cardResumen">
+                    <h3>Restante</h3>
+                    <p id="mostrarRestante">$0</p>
+                </div>
             </section>
         </div>
     </main>

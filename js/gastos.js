@@ -5,14 +5,32 @@ const spn_mostarGastos = document.getElementById("mostrarGasto")
 const ul_listaGastos = document.getElementById("listaGastos")
 const p_alertaGasto = document.getElementById("alertaGasto")
 const dt_fechaGasto = document.getElementById("fecha-gasto")
+const sl_categoriaGasto = document.getElementById("categoria-gasto")
 
 const gastos = JSON.parse(localStorage.getItem("gastos")) || []
+
+
+async function cargarCategorias() {
+    const respuesta = await fetch("../db/categorias.json")
+    const data = await respuesta.json()
+
+    const categorias = data.categorias
+
+    categorias.forEach(categoria => {
+        const opcion = document.createElement("option")
+        opcion.value = categoria
+        opcion.textContent = categoria
+        sl_categoriaGasto.appendChild(opcion)
+    })
+}
+
 
 btn_agregarGasto.addEventListener("click", async () => {
     try{
         const nombreGasto = in_nombreGasto.value
         const montoGasto = parseFloat(in_montoGasto.value)
         const fechaGasto = dt_fechaGasto.value
+        const categoriaGasto = sl_categoriaGasto.value
 
         if (nombreGasto === "" || montoGasto <= 0 || isNaN(montoGasto)|| fechaGasto === ""){
                 await Swal.fire({
@@ -25,7 +43,8 @@ btn_agregarGasto.addEventListener("click", async () => {
         gastos.push({
             nombre: nombreGasto,
             monto: montoGasto,
-            fecha: fechaGasto
+            fecha: fechaGasto,
+            categoria: categoriaGasto
         })
 
         localStorage.setItem("gastos",JSON.stringify(gastos))
@@ -70,7 +89,7 @@ function cargarGastos (){
     gastos.forEach((gasto, indice) => {
 
         const liLista = document.createElement("li")
-        liLista.textContent = `${gasto.nombre}: $${gasto.monto} Fecha: ${gasto.fecha}`
+        liLista.textContent = `${gasto.nombre}: $${gasto.monto} Categoria: ${gasto.categoria} Fecha: ${gasto.fecha}`
         ul_listaGastos.appendChild(liLista)
 
         const btn_eliminarGasto = document.createElement("button")
@@ -144,6 +163,7 @@ function editarGasto (indice){
         in_nombreGasto.value = gasto.nombre
         in_montoGasto.value = gasto.monto
         dt_fechaGasto.value = gasto.fecha
+        sl_categoriaGasto.value = gasto.categoria
 
         gastos.splice(indice,1)
         localStorage.setItem("gastos",JSON.stringify(gastos))
@@ -158,3 +178,4 @@ function editarGasto (indice){
     }
     });
 }
+cargarCategorias()
