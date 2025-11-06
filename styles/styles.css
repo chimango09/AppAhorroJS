@@ -9,7 +9,6 @@ body{
 }
 main {
     width: 900px;
-    height: 600px;
     background-color: rgb(255, 255, 255);
     margin: 40px auto;
     border-radius: 25px;
